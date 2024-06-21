@@ -1,10 +1,13 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
-  ssr: true,  
-  modules: [], 
-  build: {
-    
-  },
+  ssr: false,
   css: [
     '~/assets/css/global.css'
   ],
+  nitro: {
+    prerender: {
+      routes: ['/'],
+    }
+  }
 })
